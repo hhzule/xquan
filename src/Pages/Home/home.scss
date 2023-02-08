@@ -1,0 +1,195 @@
+.yellow {
+  color: yellow !important;
+  font-size: 14px !important;
+}
+
+
+// Home Page
+.home-page {
+  width: 100%;
+  min-height: 730px;
+  padding: 30px 0;
+  @include media("<=desktop") {
+    height: 100%;
+  }
+  .wrap {
+    height: 100%;
+    .page-tag {
+      min-width: 250px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      padding: 12px 12px;
+      border-radius: 2px;
+      background-color: #fcdc24;
+      border: 2px solid #fff;
+      transition: border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    }
+    ._block {
+      width: 100%;
+      grid-gap: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-direction: column;
+      // grid-template-columns: repeat(1, 1fr);
+      padding: 40px 0;
+      @include media("<=phoneH") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .card {
+        width: 480px;
+        min-height: 560px;
+        .hide {
+          visibility: hidden;
+          opacity: 0;
+        }
+        .card-tag {
+          text-align: center;
+          font-size: 22px;
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 12px;
+          background: #000000ca;
+          width: 100%;
+          padding: 12px;
+          border-radius: 12px;
+          border: 1px solid #eee;
+        }
+        .card-block {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: #00000091;
+          border: 1px solid $themeColor;
+          overflow: hidden;
+          .selection-tabs {
+            width: 100%;
+            .tab {
+              flex: 1;
+              padding: 18px 12px;
+              font-size: 18px;
+              font-weight: 600;
+              color: $themeColor;
+              background: #000000;
+              cursor: pointer;
+              &.active {
+                background: $themeColor;
+                color: #ffffff;
+              }
+            }
+          }
+          .meta {
+            width: 100%;
+            height: 100%;
+            padding: 30px 20px;
+            .field {
+              width: 100%;
+              .f-tag {
+                text-align: start;
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 6px;
+              }
+              .select {
+                margin-bottom: 30px;
+              }
+              .input-box {
+                background: #fff;
+                border-radius: 4px;
+                padding: 5px 8px;
+                .txt {
+                  padding: 0 8px;
+                }
+                .btn {
+                  font-size: 14px;
+                  padding: 4px;
+                  border-radius: 4px;
+                }
+              }
+            }
+            .item {
+              margin-top: 10px;
+              .lbl {
+                text-align: center;
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+              }
+              .val {
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+                color: #fff;
+              }
+            }
+            .action {
+              // flex: 1;
+              // height: 100%;
+              margin-bottom: 50px;
+              width: 100%;
+              // padding: 20px 0;
+              // margin-top: 20px;
+              .btn {
+                width: 100%;
+                font-size: 24px;
+                font-weight: 600;
+                text-transform: uppercase;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+      .card2 {
+        width: 480px;
+        min-height: 560px;
+
+        .card-tag2 {
+          text-align: center;
+          font-size: 22px;
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 12px;
+          width: 100%;
+        }
+        .card-tag3 {
+          text-align: center;
+          font-size: 18px;
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 12px;
+          background: #000000ca;
+          width: 100%;
+          padding: 12px;
+          border-radius: 12px;
+          border: 1px solid #eee;
+        }
+        .desc2 {
+          text-align: center;
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+          margin-bottom: 12px;
+          width: 100%;
+        }
+        .btn-copy {
+          width: 100%;
+          font-size: 18px;
+          border-radius: 8px;
+        }
+        .card-block {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: #00000091;
+          border: 1px solid $themeColor;
+          overflow: hidden;
+          padding: 40px;
+        }
+      }
+    }
+  }
+}

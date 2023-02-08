@@ -1,0 +1,47 @@
+@mixin dropDownAnim($duration: 0.3s) {
+  animation-name: drop;
+  animation-duration: $duration;
+  transform-origin: top;
+}
+
+// Header
+.header-camp {
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 0px;
+  // position: sticky;
+
+  @include media("<=tablet") {
+    padding: 20px 0px;
+  }
+  .wrap {
+    @include media("<=phoneH") {
+      // flex-direction: column;
+    }
+    .left {
+      flex: 1;
+      .logo {
+        height: 86px;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      justify-content: end;
+      .action {
+        .btn {
+          font-size: 18px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

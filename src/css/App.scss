@@ -1,0 +1,262 @@
+@import "./Colors.scss";
+@import "./Props.scss";
+@import "./media.scss";
+@import "../components/Header/header.scss";
+@import "../components/Footer/footer.scss";
+@import "../components/Sidebar/sidebar.scss";
+@import "../Pages/Home/home.scss";
+
+@font-face {
+  font-family: "balloon";
+  src: url("../fonts/Superfats-6PRM.ttf");
+  font-style: Regular;
+}
+
+@font-face {
+  font-family: "Arial black";
+  src: url("../fonts/ariblk.ttf");
+  // font-style: Regular;
+}
+
+.font,
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.silk-font {
+  font-family: "Silkscreen", cursive;
+}
+
+.balloon-font {
+  font-family: "balloon";
+}
+
+@mixin bgImage($radius: 50%) {
+  height: 100%;
+  width: 100%;
+  border-radius: $radius;
+  background-color: #e2e2e2;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@mixin dropDownAnim($duration: 0.3s) {
+  animation-name: drop;
+  animation-duration: $duration;
+  transform-origin: top;
+}
+
+@keyframes drop {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+.wrapWidth {
+  width: 1350px;
+  margin: 0 auto;
+  @include media("<=xlarge") {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  @include media("<=large") {
+    width: 100%;
+    padding: 0px 3%;
+  }
+  @include media("<=desktop") {
+    width: 100%;
+    padding: 0px 3%;
+  }
+  @include media("<=tablet") {
+    width: 100%;
+    padding: 0px 3%;
+  }
+  @include media(">=phone", "<=480px") {
+    padding: 0px 5%;
+  }
+}
+
+.App {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image: url("../../public/images/header_background.jpeg");
+  @include bgImage(0);
+}
+
+//Drop Down
+.dropDown {
+  width: 100%;
+  margin: 8px 0;
+  .icon-arrow {
+    padding-left: 8px;
+    border-left: 2px solid #000;
+    margin-left: 8px;
+  }
+  .category {
+    width: 100%;
+    font-family: "Quicksand";
+    .cbox {
+      background: #ffffff;
+      border: 1px solid #bababa;
+      padding: 0 16px;
+      min-height: 42px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      min-width: 180px;
+      width: 100%;
+      justify-content: space-between;
+      @include media(">=phone", "<=480px") {
+        min-width: 150px;
+      }
+      .icon-arrow {
+        svg {
+          path {
+            fill: $themeColor;
+          }
+        }
+      }
+      .slt {
+        overflow: hidden;
+        .ico {
+          cursor: pointer;
+          color: #000000d9;
+          height: 22px;
+          display: flex;
+          align-items: center;
+        }
+        .lbl {
+          color: #000;
+          padding: 0 10px;
+        }
+        .unit-name {
+          .unit-eng {
+            color: #000000;
+          }
+        }
+      }
+      .d-img {
+        margin: 2px 10px;
+        .img {
+          height: 25px;
+          width: 25px;
+          padding: 2.5px;
+          border-radius: 100%;
+          border: 1px solid $themeColor;
+        }
+      }
+      .edit-icon {
+        margin: 2px 10px;
+        padding: 4px;
+        border-radius: 100%;
+        border: 1px solid $themeColor;
+      }
+      .dropDown-icon {
+        cursor: pointer;
+      }
+    }
+  }
+  .block {
+    top: 45px;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    width: 100%;
+    .manue {
+      width: 100%;
+      // height: 150px;
+      overflow-y: auto;
+      padding: 0px 0px;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      .slt {
+        width: 100%;
+        padding: 8px 16px;
+        border-top: 1px solid #b8b8b8;
+        @include anim;
+        &.active {
+          background-color: $themeColor;
+          color: #ffffff;
+          .unit-name {
+            .unit-eng {
+              color: #ffffff;
+            }
+          }
+        }
+        .unit-name {
+          .unit-eng {
+            color: #000;
+          }
+        }
+        .ico {
+          justify-content: flex-start;
+          margin-right: 8px;
+          width: 25px;
+          height: 25px;
+        }
+        .lbl {
+          flex: 1;
+          margin-left: 5px;
+          justify-content: flex-start;
+        }
+        &:hover {
+          cursor: pointer;
+          .ico {
+            color: $themeColor;
+          }
+          .lbl {
+            color: $themeColor;
+          }
+        }
+      }
+    }
+    &.show {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      @include dropDownAnim;
+    }
+  }
+}
+
+//Radio Button
+.radio-btn {
+  // top: -11px;
+  height: 22px;
+  width: 22px;
+  // background: #000403;
+  min-width: 22px;
+  border: 2px solid #ae2744;
+  border-radius: 50%;
+  margin-right: 12px;
+  &::before {
+    content: "";
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    min-width: 14px;
+    background: $themeColor;
+    border-radius: 50%;
+    left: 2px;
+    top: 2px;
+    visibility: hidden;
+    opacity: 0;
+    @include anim;
+  }
+  &.on {
+    border-color: $themeColor;
+    &:before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
